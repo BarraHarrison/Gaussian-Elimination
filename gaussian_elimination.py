@@ -7,7 +7,27 @@ def solve_system_of_equations(A, B):
         return solution
     except np.linalg.LinAlgError:
         return "System does not have a solution"
-    
+
+def gaussian_elimination(A, B):
+    n = len(A)
+
+    augmented = np.column_stack(A, B)
+    augmented = augmented.astype(float)
+
+    for i in range(n):
+        pivot_row = 1
+        max_val = abs(augmented[i][i])
+
+        for k in range(i + 1, n):
+            if abs(augmented[k][i]) > max_val:
+                max_val = abs(augmented[k][i])
+                pivot_row = k
+
+        if pivot_row != i:
+            augmented[i], augmented[pivot_row] = augmented[pivot_row].copy(), augmented[i].copy()
+
+
+
 A = np.array([
     [3, -1, -1],
     [1, 1, 0],
