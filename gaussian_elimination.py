@@ -11,7 +11,7 @@ def solve_system_of_equations(A, B):
 def gaussian_elimination(A, B):
     n = len(A)
 
-    augmented = np.column_stack(A, B)
+    augmented = np.column_stack((A, B))
     augmented = augmented.astype(float)
 
     for i in range(n):
@@ -56,3 +56,4 @@ B = np.array([5, 0, 2])
 
 print(solve_system_of_equations(A, B))
 # Result: [ 1.3 -1.3  0.2]
+print(gaussian_elimination(A, B))
