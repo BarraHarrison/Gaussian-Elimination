@@ -36,6 +36,14 @@ def gaussian_elimination(A, B):
             factor = augmented[j][i]
             augmented[j] = augmented[j] - factor * augmented[i]
 
+    x = np.zeros(n)
+    for i in range(n-1, -1, -1):
+        x[i] = augmented[i][-1]
+        for j in range(i+1, n):
+            x[i] = x[i] - augmented[i][j] * x[j]
+
+    return x
+
 
 
 A = np.array([
