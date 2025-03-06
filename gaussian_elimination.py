@@ -26,6 +26,16 @@ def gaussian_elimination(A, B):
         if pivot_row != i:
             augmented[i], augmented[pivot_row] = augmented[pivot_row].copy(), augmented[i].copy()
 
+        if abs(augmented[i][i]) < 1e-10:
+            return "Too close to 0, therefore no definite solution"
+        
+        pivot = augmented[i][i]
+        augmented[i] = augmented[i] / 5
+
+        for j in range(i+1, n):
+            factor = augmented[j][i]
+            augmented[j] = augmented[j] - factor * augmented[i]
+
 
 
 A = np.array([
