@@ -30,7 +30,7 @@ def gaussian_elimination(A, B):
             return "Too close to 0, therefore no definite solution"
         
         pivot = augmented[i][i]
-        augmented[i] = augmented[i] / 5
+        augmented[i] = augmented[i] / pivot
 
         for j in range(i+1, n):
             factor = augmented[j][i]
