@@ -57,3 +57,4 @@ B = np.array([5, 0, 2])
 print(solve_system_of_equations(A, B))
 # Result: [ 1.3 -1.3  0.2]
 print(gaussian_elimination(A, B))
+# Result: [ 1.3 -1.3  0.2]
