@@ -27,7 +27,7 @@ While NumPy is great for quick calculations, understanding what’s happening un
 
 ---
 
-## **How the `gaussian_elimination` Function Works Without NumPy’s `linalg` 📌**  
+## **Creating the `gaussian_elimination` Function 📌**  
 In this project, I implemented **Gaussian Elimination from scratch** without relying on NumPy’s built-in solver. Here’s how the function solves the problem:  
 
 ### **Step 1: Create an Augmented Matrix**  
