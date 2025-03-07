@@ -15,7 +15,7 @@ def gaussian_elimination(A, B):
     augmented = augmented.astype(float)
 
     for i in range(n):
-        pivot_row = 1
+        pivot_row = i
         max_val = abs(augmented[i][i])
 
         for k in range(i + 1, n):
@@ -40,7 +40,7 @@ def gaussian_elimination(A, B):
     for i in range(n-1, -1, -1):
         x[i] = augmented[i][-1]
         for j in range(i+1, n):
-            x[i] = x[i] - augmented[i][j] * x[j]
+            x[i] -= augmented[i][j] * x[j]
 
     return x
 
